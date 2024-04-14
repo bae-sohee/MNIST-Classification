@@ -25,9 +25,9 @@
   - Use the command **pip install -r requirements.txt** to install libraries.
 
 ## 2. Dataset
-- Each of tar files contains 60,000 training images and 10,000 test images respectively
-- Each image has its own filename like `{ID}_{Label}.png`
-- Run `dataset.py` to extract tar compressed files
+- Each of tar files contains 60,000 training images and 10,000 test images respectively.
+- Each image has its own filename like `{ID}_{Label}.png`.
+- Run `dataset.py` to extract .tar compressed files.
   ```bash
   ¦§¦¡¦¡ data
   ¦¢   ¦§¦¡¦¡ train
@@ -46,13 +46,13 @@
   ```bash
   python main.py
   ```
-- Model training configuration can be set in #args
-- The default settings are as follows
-    # args
+- Model training configuration can be set in **args**.
+- The default settings are as follows.
+    #### args
     model_type = 'LeNet5'  
-    epochs = 10
-    lr = 0.01
-    batch_size = 64
+    epochs = 10  
+    lr = 0.01  
+    batch_size = 64  
 
 ## 4. Model Structure
 - You can check the structure of the model by running `model.py`.
@@ -121,6 +121,6 @@
 
 ## 6. Refecence
 
-LeNet5 ¸ðµ¨ : https://deep-learning-study.tistory.com/503
+LeNet5 ¸ðµ¨ : https://deep-learning-study.tistory.com/503  
 
 tar ÆÄÀÏ ¾ÐÃà Ç®±â : https://salguworld.tistory.com/entry/Python-tarfile-%EB%AA%A8%EB%93%88%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-tar-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EB%B0%8F-%ED%8C%8C%EC%9D%BC-%EB%AA%A9%EB%A1%9D-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-1
