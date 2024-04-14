@@ -38,7 +38,8 @@
   │   │    └── 00000_7.png
   │   │    └── 00001_2.png
   │   │        ...
-```
+  ```
+
 ## 3. Implementation
 - You need to run `main.py`.
 
@@ -60,35 +61,27 @@
   python model.py
   ```
 
-LeNet-5 Summary:
-----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-================================================================
-            Conv2d-1            [-1, 6, 24, 24]             156
-         MaxPool2d-2            [-1, 6, 12, 12]               0
-            Conv2d-3             [-1, 16, 8, 8]           2,416
-         MaxPool2d-4             [-1, 16, 4, 4]               0
-            Linear-5                  [-1, 120]          30,840
-            Linear-6                   [-1, 84]          10,164
-            Linear-7                   [-1, 10]             850
-================================================================
-Total params: 44,426
-Trainable params: 44,426
-Non-trainable params: 0
-----------------------------------------------------------------
+### LeNet-5 Summary
 
-CustomMLP Summary:
-----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-================================================================
-            Linear-1                   [-1, 56]          43,960
-            Linear-2                   [-1, 28]           1,596
-            Linear-3                   [-1, 10]             290
-================================================================
-Total params: 45,846
-Trainable params: 45,846
-Non-trainable params: 0
-----------------------------------------------------------------
+| Layer (type)   | Output Shape      | Param # |
+|----------------|-------------------|---------|
+| Conv2d-1       | [-1, 6, 24, 24]   | 156     |
+| MaxPool2d-2    | [-1, 6, 12, 12]   | 0       |
+| Conv2d-3       | [-1, 16, 8, 8]    | 2,416   |
+| MaxPool2d-4    | [-1, 16, 4, 4]    | 0       |
+| Linear-5       | [-1, 120]         | 30,840  |
+| Linear-6       | [-1, 84]          | 10,164  |
+| Linear-7       | [-1, 10]          | 850     |
+| **Total**      |                   | **44,426** |
+
+### CustomMLP Summary
+
+| Layer (type)   | Output Shape      | Param # |
+|----------------|-------------------|---------|
+| Linear-1       | [-1, 56]          | 43,960  |
+| Linear-2       | [-1, 28]          | 1,596   |
+| Linear-3       | [-1, 10]          | 290     |
+| **Total**      |                   | **45,846** |
 
 - How to calculate the number of model parameters of LeNet5 and CustomMLP
 
@@ -129,4 +122,5 @@ Non-trainable params: 0
 ## 6. Refecence
 
 LeNet5 모델 : https://deep-learning-study.tistory.com/503
+
 tar 파일 압축 풀기 : https://salguworld.tistory.com/entry/Python-tarfile-%EB%AA%A8%EB%93%88%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-tar-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EB%B0%8F-%ED%8C%8C%EC%9D%BC-%EB%AA%A9%EB%A1%9D-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-1
