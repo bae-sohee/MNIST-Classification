@@ -136,7 +136,7 @@
   ![loss_plot_LeNet5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/47d870a3-6790-4bb2-99c3-8128e4657897)
 
 - As a result of comparing the performance of the Custom MLP and LeNet-5 models through 20 epoch, the result were 97.14 for Custom MLP and 98.77 for LeNet-5. Although the similar parameters of the two models (Custom MLP: 45,846, LeNet-5: 44,426), the CNN-based model performs better than the MLP model.
-- - From checking the learning curves of both models, the loss decreases exponentially as the learning progresses, and it seems to converge from 0.07~0.09 for Custom NLP and 0.02~0.03 for LeNet-5.
+- From checking the learning curves of both models, the loss decreases exponentially as the learning progresses, and it seems to converge from 0.070.09 for Custom NLP and 0.020.03 for LeNet-5.
 - To improve the LeNet-5 model performance, two regularization techniques were applied: Batch normalization and Dropout. The performance was 98.77 for LeNet-5, and 98.86 for LeNet-5 with regularization, showing very slight performance improvement. Due to the low complexity of the data or model used in the experiment, it is assumed that the performance difference between the two models did not appear significantly.  
 - For the known accuracy of the existing LeNet-5, the reference result was referred to as reference result. The reference result (about 97.5, 97.64)
 
