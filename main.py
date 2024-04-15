@@ -1,6 +1,6 @@
 
 import dataset
-from model import LeNet5, CustomMLP
+from model import LeNet5, LeNet5_regularization, CustomMLP
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -70,7 +70,7 @@ def test(model, tst_loader, device, criterion):
 
     return tst_loss, acc
   
-def main(model_type='LeNet5', epochs=10, lr=0.01, batch_size=64):
+def main(model_type='LeNet5', epochs=20, lr=0.001, batch_size=64):
     """ Main function
 
         This process involves creating dataset objects, setting up data loaders, and initializing models, It includes setting up an optimization method, defining a loss function, and so on.
@@ -100,6 +100,8 @@ def main(model_type='LeNet5', epochs=10, lr=0.01, batch_size=64):
         model = LeNet5().to(device)
     elif model_type == 'CustomMLP':
         model = CustomMLP().to(device)
+    elif model_type == 'LeNet5_regularization':
+        model = LeNet5_regularization().to(device)
     else:
         raise ValueError("Unsupported model type")
 
@@ -168,11 +170,18 @@ def save_plots(train_losses, train_accuracies, test_losses, test_accuracies, mod
 if __name__ == '__main__':
 
     # args
-    model_type = 'CustomMLP'  # 'CustomMLP' or 'LeNet5'
+    model_type = 'LeNet5'  # 'LeNet5' or 'CustomMLP' or 'LeNet5_regularization'
     epochs = 20
     lr = 0.001
     batch_size = 64
 
     train_losses, train_accuracies, test_losses, test_accuracies = main(model_type, epochs, lr, batch_size)
-    model = CustomMLP() if model_type == 'CustomMLP' else LeNet5()
+    
+    if model_type == 'LeNet5':
+        model = LeNet5()
+    elif model_type == 'CustomMLP':
+        model = CustomMLP()
+    else:
+        model = LeNet5_regularization()
+
     save_plots(train_losses, train_accuracies, test_losses, test_accuracies, model)

@@ -2,7 +2,7 @@
 - Building a Neural Network Classifier with MNIST Dataset
 
 ### Assignment Objective
-- For the MNIST, we implement a data loader and a classification model.
+- For the MNIST, We implement a data loader and a classification model.
 - We obtain the CNN model and the MLP model and compare the performance and loss of the model.
 
 ## 1. Environment
@@ -50,8 +50,8 @@
 - The default settings are as follows.
     #### args
     model_type = 'LeNet5'  
-    epochs = 10  
-    lr = 0.01  
+    epochs = 20  
+    lr = 0.001  
     batch_size = 64  
 
 ## 4. Model Structure
@@ -83,9 +83,9 @@
 | Linear-3       | [-1, 10]          | 290     |
 | **Total**      |                   | **45,846** |
 
-- How to calculate the number of model parameters of LeNet5 and CustomMLP
+### How to calculate the number of model parameters of LeNet5 and CustomMLP
 
-- LeNet-5
+- **LeNet-5**
 1. Conv2d-1(conv1) 
      input channel : 1, output channel : 6, kernal_size : 5*5, bias : 6
      total parms : (5*5*1*6)+6 = 156
@@ -104,7 +104,7 @@
 
      Total parameters of LeNet-5 = 156 + 2,146 + 30,840 + 10,164 + 850 = 44,426
 
-- CustomMLP
+- **CustomMLP**
 1. Linear-1(fc1)
      input channel : 784, output channel : 56, bias : 56
      total parms : (784*56)+56 = 43,960
@@ -119,8 +119,35 @@
 
 ## 5. Result
 
+- Accuracy for each model
+  - CustomMLP
+  ![acc_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/32dcd452-a016-483e-a58f-7dfa5b0b4568)
+  - LeNet-5
+  ![acc_plot_LeNet-5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/9bc7ffea-b539-4f58-a583-3913fce87357)
+  - LeNet-5 (regularization)
+  ![acc_plot_LeNet-5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/1a91a124-a4ce-4c88-ad47-a226fe5f4d44)
+
+- Loss for each model
+  - CustomMLP
+  ![loss_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/35787296-2a64-442c-8946-88675c2d59fc)
+  - LeNet-5
+  ![loss_plot_LeNet5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/50088e04-19c7-40c5-8d08-b1c9a4263d53)
+  - LeNet-5 (regularization)
+  ![loss_plot_LeNet5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/47d870a3-6790-4bb2-99c3-8128e4657897)
+
+- As a result of comparing the performance of the Custom MLP and LeNet-5 models through 20 epoch, the result were 97.14 for Custom MLP and 98.77 for LeNet-5. Although the similar parameters of the two models (Custom MLP: 45,846, LeNet-5: 44,426), the CNN-based model performs better than the MLP model.
+- - From checking the learning curves of both models, the loss decreases exponentially as the learning progresses, and it seems to converge from 0.07~0.09 for Custom NLP and 0.02~0.03 for LeNet-5.
+- To improve the LeNet-5 model performance, two regularization techniques were applied: Batch normalization and Dropout. The performance was 98.77 for LeNet-5, and 98.86 for LeNet-5 with regularization, showing very slight performance improvement. Due to the low complexity of the data or model used in the experiment, it is assumed that the performance difference between the two models did not appear significantly.  
+- For the known accuracy of the existing LeNet-5, the reference result was referred to as reference result. The reference result (about 97.5, 97.64)
+
 ## 6. Refecence
 
-LeNet5 모델 : https://deep-learning-study.tistory.com/503  
+LeNet5 model  
+https://deep-learning-study.tistory.com/503  
+https://deep-learning-study.tistory.com/368?category=963091  
 
-tar 파일 압축 풀기 : https://salguworld.tistory.com/entry/Python-tarfile-%EB%AA%A8%EB%93%88%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-tar-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EB%B0%8F-%ED%8C%8C%EC%9D%BC-%EB%AA%A9%EB%A1%9D-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-1
+train
+https://velog.io/@skarb4788/%EB%94%A5-%EB%9F%AC%EB%8B%9D-MNIST-%EB%8D%B0%EC%9D%B4%ED%84%B0PyTorch
+
+Unzip the .tar file  
+https://salguworld.tistory.com/entry/Python-tarfile-%EB%AA%A8%EB%93%88%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-tar-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EB%B0%8F-%ED%8C%8C%EC%9D%BC-%EB%AA%A9%EB%A1%9D-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-1  
