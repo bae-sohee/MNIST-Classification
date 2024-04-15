@@ -112,13 +112,13 @@
 - **CustomMLP**
 1. Linear-1(fc1)
      input channel : 784, output channel : 56, bias : 56  
-     total parms : (784*56)+56 = 43,960
+     total parms : (784 * 56)+56 = 43,960
 2. Linear-2(fc2)
      input channel : 56, output channel : 28, bias : 28  
-     total parms : (56*28)+28 = 1,596
+     total parms : (56 * 28)+28 = 1,596
 3. Linear-3(fc3)
      input channel : 28, output channel : 10, bias : 10  
-     total parms : (28*10)+10 = 290
+     total parms : (28 * 10)+10 = 290
 
      Total parameters of CustomMLP = 43,960 + 1,596 + 290 = 45,846
 
