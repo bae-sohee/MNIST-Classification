@@ -92,20 +92,20 @@
 
 - **LeNet-5**
 1. Conv2d-1(conv1) 
-     input channel : 1, output channel : 6, kernal_size : 5*5, bias : 6  
-     total parms : (5*5*1*6)+6 = 156
+     input channel : 1, output channel : 6, kernal_size : 5 * 5, bias : 6  
+     total parms : (5 * 5 * 1 * 6) + 6 = 156
 2. Conv2d-2(conv2)
-     input channel : 6, output channel : 16, kernal_size : 5*5, bias : 16  
-     total parms : (5*5*6*16)+16 = 2,146
+     input channel : 6, output channel : 16, kernal_size : 5 * 5, bias : 16  
+     total parms : (5 * 5 * 6 * 16) + 16 = 2,146
 3. Linear-1(fc1)
      input channel : 256, output channel : 120, bias : 120  
-     total parms : (256*120)+120 = 30,840
+     total parms : (256 * 120) + 120 = 30,840
 4. Linear-2(fc2)
      input channel : 120, output channel : 84, bias : 84  
-     total parms : (120*84)+84 = 10,164
+     total parms : (120 * 84) + 84 = 10,164
 5. Linear-3(fc3)
      input channel : 84, output channel : 10, bias : 10  
-     total parms : (84*10)+10 = 850
+     total parms : (84 * 10) + 10 = 850
 
      Total parameters of LeNet-5 = 156 + 2,146 + 30,840 + 10,164 + 850 = 44,426
 
