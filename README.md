@@ -28,6 +28,7 @@
 - Each of tar files contains 60,000 training images and 10,000 test images respectively.
 - Each image has its own filename like `{ID}_{Label}.png`.
 - Run `dataset.py` to extract .tar compressed files.
+
   ```bash
   戍式式 data
   弛   戍式式 train
@@ -87,32 +88,32 @@
 
 - **LeNet-5**
 1. Conv2d-1(conv1) 
-     input channel : 1, output channel : 6, kernal_size : 5*5, bias : 6
+     input channel : 1, output channel : 6, kernal_size : 5*5, bias : 6  
      total parms : (5*5*1*6)+6 = 156
 2. Conv2d-2(conv2)
-     input channel : 6, output channel : 16, kernal_size : 5*5, bias : 16
+     input channel : 6, output channel : 16, kernal_size : 5*5, bias : 16  
      total parms : (5*5*6*16)+16 = 2,146
 3. Linear-1(fc1)
-     input channel : 256, output channel : 120, bias : 120
+     input channel : 256, output channel : 120, bias : 120  
      total parms : (256*120)+120 = 30,840
 4. Linear-2(fc2)
-     input channel : 120, output channel : 84, bias : 84
+     input channel : 120, output channel : 84, bias : 84  
      total parms : (120*84)+84 = 10,164
 5. Linear-3(fc3)
-     input channel : 84, output channel : 10, bias : 10
+     input channel : 84, output channel : 10, bias : 10  
      total parms : (84*10)+10 = 850
 
      Total parameters of LeNet-5 = 156 + 2,146 + 30,840 + 10,164 + 850 = 44,426
 
 - **CustomMLP**
 1. Linear-1(fc1)
-     input channel : 784, output channel : 56, bias : 56
+     input channel : 784, output channel : 56, bias : 56  
      total parms : (784*56)+56 = 43,960
 2. Linear-2(fc2)
-     input channel : 56, output channel : 28, bias : 28
+     input channel : 56, output channel : 28, bias : 28  
      total parms : (56*28)+28 = 1,596
 3. Linear-3(fc3)
-     input channel : 28, output channel : 10, bias : 10
+     input channel : 28, output channel : 10, bias : 10  
      total parms : (28*10)+10 = 290
 
      Total parameters of CustomMLP = 43,960 + 1,596 + 290 = 45,846
@@ -146,7 +147,7 @@ LeNet5 model
 https://deep-learning-study.tistory.com/503  
 https://deep-learning-study.tistory.com/368?category=963091  
 
-train
+Train  
 https://velog.io/@skarb4788/%EB%94%A5-%EB%9F%AC%EB%8B%9D-MNIST-%EB%8D%B0%EC%9D%B4%ED%84%B0PyTorch
 
 Unzip the .tar file  
