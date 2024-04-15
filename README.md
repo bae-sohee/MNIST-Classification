@@ -29,7 +29,7 @@
 - Each image has its own filename like `{ID}_{Label}.png`.
 - Run `dataset.py` to extract .tar compressed files.
 
-  ```bash
+```bash
   戍式式 data
   弛   戍式式 train
   弛   弛    戌式式 00000_5.png
@@ -39,7 +39,7 @@
   弛   弛    戌式式 00000_7.png
   弛   弛    戌式式 00001_2.png
   弛   弛        ...
-  ```
+```
 
 ## 3. Implementation
 - You need to run `main.py`.
