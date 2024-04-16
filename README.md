@@ -124,20 +124,20 @@
 ## 5. Result
 
 - Accuracy for each model
-  - CustomMLP
-  ![acc_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/70600fa9-4b39-44fb-a30f-6b00f621f1cf)
-  - LeNet-5
-  ![acc_plot_LeNet-5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/329c37ca-5a73-4612-be2d-38db9d2ec3cd)
-  - LeNet-5 (regularization)
-  ![acc_plot_LeNet-5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/7bd85219-d64d-40de-a451-774aa7407107)
+  - CustomMLP  
+  ![acc_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/70600fa9-4b39-44fb-a30f-6b00f621f1cf)  
+  - LeNet-5  
+  ![acc_plot_LeNet-5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/329c37ca-5a73-4612-be2d-38db9d2ec3cd)  
+  - LeNet-5 (regularization)  
+  ![acc_plot_LeNet-5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/7bd85219-d64d-40de-a451-774aa7407107)  
 
 - Loss for each model
-  - CustomMLP
-  ![loss_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/e0be35c8-21dd-4be8-929a-e36f9f793ed8)
-  - LeNet-5
-  ![loss_plot_LeNet5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/a2b00775-09ff-40bd-85d4-eaff0f860855)
-  - LeNet-5 (regularization)
-  ![loss_plot_LeNet5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/2708a020-8b51-4224-8f77-bd919aec7da7)
+  - CustomMLP  
+  ![loss_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/e0be35c8-21dd-4be8-929a-e36f9f793ed8)  
+  - LeNet-5  
+  ![loss_plot_LeNet5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/a2b00775-09ff-40bd-85d4-eaff0f860855)  
+  - LeNet-5 (regularization)  
+  ![loss_plot_LeNet5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/2708a020-8b51-4224-8f77-bd919aec7da7)  
 
 - As a result of comparing the performance of the Custom MLP and LeNet-5 models through 20 epoch, the result were 97.66 for Custom MLP and 98.80 for LeNet-5. Although the similar parameters of the two models (Custom MLP: 45,846, LeNet-5: 44,426), the CNN-based model performs better than the MLP model.
 - From checking the learning curves of both models, the loss decreases exponentially as the learning progresses, and it seems to converge from 0.10-0.15 for Custom NLP and 0.04-0.06 for LeNet-5.
