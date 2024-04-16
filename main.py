@@ -85,8 +85,8 @@ def main(model_type='LeNet5', epochs=20, lr=0.001, batch_size=64):
 
     """
     # 1)
-    train_dir = '/home/user/Desktop/bsh/DL/data/train'
-    test_dir = '/home/user/Desktop/bsh/DL/data/test'
+    train_dir = './data/train'
+    test_dir = './data/test'
     trn_dataset = dataset.MNIST(train_dir)
     tst_dataset = dataset.MNIST(test_dir)
     

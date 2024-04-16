@@ -60,11 +60,11 @@ def extract_tar_file(tar_path, extract_path):
 if __name__ == '__main__':
 
     # dataset tar file path
-    train_tar_path = '/home/user/Desktop/bsh/DL/data/train.tar'
-    test_tar_path = '/home/user/Desktop/bsh/DL/data/test.tar'
+    train_tar_path = './data/train.tar'
+    test_tar_path = './data/test.tar'
 
     # save path
-    extract_path = '/home/user/Desktop/bsh/DL/data'
+    extract_path = './data'
 
     # unzip tar
     extract_tar_file(train_tar_path, extract_path)
