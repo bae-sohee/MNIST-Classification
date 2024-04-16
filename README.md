@@ -93,16 +93,16 @@
 1. Conv2d-1(conv1) 
      input channel : 1, output channel : 6, kernal_size : 5 * 5, bias : 6  
      total parms : (5 * 5 * 1 * 6) + 6 = 156
-2. Conv2d-2(conv2)
+2. Conv2d-3(conv2)
      input channel : 6, output channel : 16, kernal_size : 5 * 5, bias : 16  
      total parms : (5 * 5 * 6 * 16) + 16 = 2,416
-3. Conv2d-2(conv3)
+3. Conv2d-5(conv3)
      input channel : 16, output channel : 120, kernal_size : 4 * 4, bias : 120  
      total parms : (4 * 4 * 16 * 120) + 120 = 30,840
-4. Linear-2(fc2)
+4. Linear-6(fc1)
      input channel : 120, output channel : 84, bias : 84  
      total parms : (120 * 84) + 84 = 10,164
-5. Linear-3(fc3)
+5. Linear-7(fc2)
      input channel : 84, output channel : 10, bias : 10  
      total parms : (84 * 10) + 10 = 850
 
