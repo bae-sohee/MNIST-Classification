@@ -106,7 +106,7 @@ def main(model_type='LeNet5', epochs=20, lr=0.001, batch_size=64):
         raise ValueError("Unsupported model type")
 
     # 4)
-    optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
+    optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
     # 5)
     criterion = nn.CrossEntropyLoss()
@@ -172,10 +172,9 @@ if __name__ == '__main__':
     # args
     model_type = 'LeNet5'  # 'LeNet5' or 'CustomMLP' or 'LeNet5_regularization'
     epochs = 20
-    lr = 0.001
     batch_size = 64
 
-    train_losses, train_accuracies, test_losses, test_accuracies = main(model_type, epochs, lr, batch_size)
+    train_losses, train_accuracies, test_losses, test_accuracies = main(model_type, epochs, batch_size)
     
     if model_type == 'LeNet5':
         model = LeNet5()

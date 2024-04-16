@@ -56,7 +56,6 @@
     #### args
     model_type = 'LeNet5'  
     epochs = 20  
-    lr = 0.001  
     batch_size = 64  
 
 ## 4. Model Structure
@@ -74,7 +73,7 @@
 | MaxPool2d-2    | [-1, 6, 12, 12]   | 0       |
 | Conv2d-3       | [-1, 16, 8, 8]    | 2,416   |
 | MaxPool2d-4    | [-1, 16, 4, 4]    | 0       |
-| Linear-5       | [-1, 120]         | 30,840  |
+| Conv2d-5       | [-1, 120, 1, 1]   | 30,840  |
 | Linear-6       | [-1, 84]          | 10,164  |
 | Linear-7       | [-1, 10]          | 850     |
 | **Total**      |                   | **44,426** |
@@ -96,10 +95,10 @@
      total parms : (5 * 5 * 1 * 6) + 6 = 156
 2. Conv2d-2(conv2)
      input channel : 6, output channel : 16, kernal_size : 5 * 5, bias : 16  
-     total parms : (5 * 5 * 6 * 16) + 16 = 2,146
-3. Linear-1(fc1)
-     input channel : 256, output channel : 120, bias : 120  
-     total parms : (256 * 120) + 120 = 30,840
+     total parms : (5 * 5 * 6 * 16) + 16 = 2,416
+3. Conv2d-2(conv3)
+     input channel : 16, output channel : 120, kernal_size : 4 * 4, bias : 120  
+     total parms : (4 * 4 * 16 * 120) + 120 = 30,840
 4. Linear-2(fc2)
      input channel : 120, output channel : 84, bias : 84  
      total parms : (120 * 84) + 84 = 10,164
@@ -107,7 +106,7 @@
      input channel : 84, output channel : 10, bias : 10  
      total parms : (84 * 10) + 10 = 850
 
-     Total parameters of LeNet-5 = 156 + 2,146 + 30,840 + 10,164 + 850 = 44,426
+     Total parameters of LeNet-5 = 156 + 2,416 + 30,840 + 10,164 + 850 = 44,426
 
 - **CustomMLP**
 1. Linear-1(fc1)
@@ -126,23 +125,23 @@
 
 - Accuracy for each model
   - CustomMLP
-  ![acc_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/32dcd452-a016-483e-a58f-7dfa5b0b4568)
+  ![acc_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/70600fa9-4b39-44fb-a30f-6b00f621f1cf)
   - LeNet-5
-  ![acc_plot_LeNet-5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/9bc7ffea-b539-4f58-a583-3913fce87357)
+  ![acc_plot_LeNet-5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/329c37ca-5a73-4612-be2d-38db9d2ec3cd)
   - LeNet-5 (regularization)
-  ![acc_plot_LeNet-5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/1a91a124-a4ce-4c88-ad47-a226fe5f4d44)
+  ![acc_plot_LeNet-5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/7bd85219-d64d-40de-a451-774aa7407107)
 
 - Loss for each model
   - CustomMLP
-  ![loss_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/35787296-2a64-442c-8946-88675c2d59fc)
+  ![loss_plot_CustomMLP](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/e0be35c8-21dd-4be8-929a-e36f9f793ed8)
   - LeNet-5
-  ![loss_plot_LeNet5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/50088e04-19c7-40c5-8d08-b1c9a4263d53)
+  ![loss_plot_LeNet5](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/a2b00775-09ff-40bd-85d4-eaff0f860855)
   - LeNet-5 (regularization)
-  ![loss_plot_LeNet5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/47d870a3-6790-4bb2-99c3-8128e4657897)
+  ![loss_plot_LeNet5_regularization](https://github.com/bae-sohee/MNIST_Classification/assets/123538321/2708a020-8b51-4224-8f77-bd919aec7da7)
 
-- As a result of comparing the performance of the Custom MLP and LeNet-5 models through 20 epoch, the result were 97.14 for Custom MLP and 98.77 for LeNet-5. Although the similar parameters of the two models (Custom MLP: 45,846, LeNet-5: 44,426), the CNN-based model performs better than the MLP model.
-- From checking the learning curves of both models, the loss decreases exponentially as the learning progresses, and it seems to converge from 0.070.09 for Custom NLP and 0.020.03 for LeNet-5.
-- To improve the LeNet-5 model performance, two regularization techniques were applied: Batch normalization and Dropout. The performance was 98.77 for LeNet-5, and 98.86 for LeNet-5 with regularization, showing very slight performance improvement. Due to the low complexity of the data or model used in the experiment, it is assumed that the performance difference between the two models did not appear significantly.  
+- As a result of comparing the performance of the Custom MLP and LeNet-5 models through 20 epoch, the result were 97.66 for Custom MLP and 98.80 for LeNet-5. Although the similar parameters of the two models (Custom MLP: 45,846, LeNet-5: 44,426), the CNN-based model performs better than the MLP model.
+- From checking the learning curves of both models, the loss decreases exponentially as the learning progresses, and it seems to converge from 0.10-0.15 for Custom NLP and 0.04-0.06 for LeNet-5.
+- To improve the LeNet-5 model performance, two regularization techniques were applied: Batch normalization and Dropout. The performance was 98.80 for LeNet-5, and 99.13 for LeNet-5 with regularization, showing very slight performance improvement. Due to the low complexity of the data or model used in the experiment, it is assumed that the performance difference between the two models did not appear significantly.  
 - For the known accuracy of the existing LeNet-5, the reference result was referred to as reference result. The reference result (about 97.5, 97.64)
 
 ## 6. Refecence
